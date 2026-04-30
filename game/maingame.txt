@@ -1,0 +1,50 @@
+Main game story:
+default player:Brandon
+default girl: Erza
+
+Dream:
+"Have you ever wished you were never born or wished you'd die without affecting those around you..."
+
+3 CHOICES
+yes - me too die=true
+no - i wish i could relate die=false
+idk - nobody knows for certain dear die=false
+
+"Lets marry when we get older" says Erza. Yeah.. I'm yours.. your's foreve----
+... ... ...
+
+Alarm rings.. It's 7:00 am.. You wake up to the sound of the alarm and your mom doing the dishes. Your mom sees you moving around and calls you out. Brandon wake up it's already early in the morning, you don't want to sleep all day do you. "No mom, I'll get up soon.." you say. "Don't forget we have to go see Erza off at the Airport today. She's leaving today and I think the flight is at 9:00" says mom . "Erza? Who's Erza?" you say surprised. Your mom sounds surprised and says "Did you already forget who Erza is before she even leaves?"
+
+2 CHOICES:
+I dont know who Erza is who are you talking about?
+ Your mom comes into the room and shouts 'Dont play those games on me. I know you just woke up and are probably half asleep but dont go acting insane, now get up and start getting ready before I get mad' says mom. "okay mom I'm sorry' you say.
+
+ I'm just joking I ofcourse know Erza!
+ Yeah you better, you've been together since you were born. You've known each other longer than anyone else.
+
+
+"Now go get ready to head to the airport we have a long day up ahead" says Mom. Okay mom.
+Should I take a bath?
+
+2 CHOICES:
+Yes
+Yes let me take a bath, you go into the shower to take a bath
+if remember=false
+  if die=true -> you die
+  if die = false -> you hit your head and get rushed to the hospital but you survive
+
+if remember=true
+  why did I lie to my mom I should go and tell her the truth.. you try exiting the shower but slip and fall and sprain your ankle you call for help and your mom comes to pick you up and keeps you in your bed, you decide not to go to the airport since you couldn't walk and your mom decided to go alone. Your mom didnt return for a long while and you got worried.. you then got a call from your neighbor and they informed you that your mom had been hit by a truck and she was in critical condition
+  die = true -> mom survives but is critical
+  narrator: you previously said you wanted to die didnt you? You know the right thing to do.. Russian roulette starts with narrator vs player; player dies
+
+  die = false -> mom dies -> Now let me ask you again, do you wish to kill yourself? prompt
+    if
+    die_new=true -> you jump off a cliff and die... cutscene plays.. you die without knowing who Erza is
+    die_new =false -> you survive on the will to find out who Erza is and who your mom was talking about
+
+
+
+No
+No, I'll skip on the bath for today. You go back to your bed and decide to dose off for a while. Your mom wakes you up and you head for the airport.
+you shop around and return late at night and dose off instantly. and you're stuck in a time loop (YOU MUST BATH)
