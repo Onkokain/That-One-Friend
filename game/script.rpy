@@ -1,9 +1,9 @@
 ﻿label start:
     # play bg music eerie
-    $ mystery = "???"
+    $ mystery = "??#@!"
     scene bg black
     with fade
-    empty "Have you ever wished you were never born.. or you could die without it affecting anyone else.."
+    empty "Have you ever wished you were never born.. or wished you could die without it affecting anyone else.."
     menu:
         "Yes..":
             mystery "I know how you feel.."
@@ -13,7 +13,7 @@
             $ wanna_die=False
         "I don't know..":
             mystery "Nobody does for certain dear.."
-            $ wanna_die=False
+            $ wanna_die="unknown"
     #stop bg music eerie and play bg music default at park
     scene bg park
     with fade
@@ -21,13 +21,14 @@
     mystery "Lets marry when we get older okay?"
     you "Yeah... I'll always be with you, no matter what."
     you "No matter what..."
-
+    # bg music fades out and alarm starts playing
     scene bg bed
     with fade
 
     you "Huh...? What?? Was I in a dream?"
     you "Who was that? I don't remember anything about her..."
     empty "... ... ..."
+    # alarm stops
 
     scene bg black
     with fade
@@ -45,11 +46,17 @@
 
     scene bg kitchen
     with fade
+    # water flowing music starts to play
 
     mom "[player], get up now! It's already 7:00 do you plan on sleeping all day?"
+    # water flowing music fades out
+    scene bg bed with fade
+
+    narrator "Your mom bolts into your room and asks you to get up.."
+
     mom "Did you forget.. you have to see [mystery] off at the Airport today."
     mom "You didn't forget.. did you?"
-
+    # eerie bg music starts playing
     menu:
         "How could i ever forget about [mystery]..":
             $ remember = True
@@ -58,10 +65,6 @@
         "Who is [mystery]":
             $ remember= False
             call forgot_route
-
-        "... ... ...":
-            $ remember= "default"
-            call default_route
 
     mom "Now hurry up and get ready.. we have to leave to see her off soon.."
 
@@ -154,7 +157,7 @@
                     mom "You had an accident in the shower! You slipped and fell and hit your head on the wall.."
                     mom "Thank god you're okay now.."
                     narrator 'You try to move around but the doctor stops you..'
-                    doctor 'Don't try to move around yet.. You're hurt bad you need to let your body heal..'
+                    doctor "Don't try to move around yet.. You're hurt bad you need to let your body heal.."
 
                     you "But.. but I have to go to the Airport!"
                     mom "Why'd you want to go to the airport dear?"
@@ -172,15 +175,88 @@
                     you "I don't understand.. I clearly remember you telling me about [mystery].."
                     mom "You hurt your head bad and lost a lot of blood dear.. take rest for now you'll be all fine tomorrow.."
                     you "If you say so mom.."
-
-
-
-
-
-
-
         "Don't take a shower":
             empty"{i} I don't really feel like taking a shower.. guess I'll skip it.. {/i}"
+            narrator "You decide to skip the shower and just rest for a while.."
+            narrator "You go back to your bed and lay down for a while.."
+
+            if remember==False:
+                empty "{i} I still can't stop thinking about her.. who is she?? {/i}"
+                empty "{i} I wished mom would just tell me already.. but I guess she thinks I'm just messing with her..{/i}"
+                empty "{i} Let me dose off for a while.. maybe I'll see her in my dream again..{/i}"
+
+                mom "[player], are you just going to lay there all day??"
+                mom "Lets go it's time to go to the airport.."
+
+                narrator "You wake up to the sound of your mom yelling.."
+                you "Yeah.. I'm getting up.. Let's go."
+                narrator "You get up put your nice clothes on and head out to the airport with your mom.."
+                mom "I guess we arrived too early.. we have to wait for a while.."
+                narrator "You and your mom wait for a while for [mystery] to arrive.."
+                mom "Did i get the timing wrong? I thought the flight left at 9:00 am.. Oh my.. was it pm instead.."
+                you "I don't know.. I don't remember anything about the flight.."
+                narrator "Your mom looks at you and sighs.."
+                mom "Honey I know it's early in the morning and you're still half asleep but don't joke around like that!"
+                mom "I know you must be sad but you shouldn't behave like this! You ought to give [mystery] a proper goodbye.."
+
+                you "Okay mom.."
+                narrator "You and your mom wait for a while longer but [mystery] was nowhere in sight"
+                mom "Guess I did get the timing wrong.. I thought the flight left at 9:00 am.. Oh my.. I guess it was pm instead.."
+                you "{i}Sigh.. {/i} Let's return back there's no point in waiting here.."
+                mom "Guess you are right.. Let's go shopping for a while and head back home."
+
+                narrator "It was already noon by the time you left the airport.."
+                narraotor "You and your mom went shopping for a while.. atleast it felt like a while.."
+
+                narrator "You and your mom head back home.."
+                narrator "You reached back home and saw that it was already 8:00 pm.. You had been shopping for 8hours straight.."
+
+                narrator "You go to your room to rest for a while.."
+                narrator "Since it was already very late and you had eaten a ton while shipping you decide to doze off.."
+                narrator "You quickly fell asleep and you had a dream about [mystery] again.."
+                narrator "And it went like..."
+                jump start
+            else:
+
+                empty "{i} I lied to mom about knowing who [mystery] was.. but who is she?? {/i}"
+                empty "{i} I can't stop thinking about her.. Should I maybe just ask mom?.. {/i}"
+                empty "{i} No.. I don't think I should ask her.. She'll probably think I'm insane..{/i}"
+                empty "{i} Let me dose off for a while.. maybe I'll see her in my dream again..{/i}"
+
+                mom "[player], are you just going to lay there all day??"
+                mom "Lets go it's time to go to the airport.."
+
+                narrator "You wake up to the sound of your mom yelling.."
+                you "Yeah.. I'm getting up.. Let's go."
+                narrator "You get up put your nice clothes on and head out to the airport with your mom.."
+                mom "I guess we arrived too early.. we have to wait for a while.."
+                narrator "You and your mom wait for a while for [mystery] to arrive.."
+                mom "Did i get the timing wrong? I thought the flight left at 9:00 am.. Oh my.. was it pm instead.."
+                you "Mom.. I lied to you.. I don't know who [mystery] is.."
+                narrator "Your mom looks at you and sighs.."
+                mom "Honey I know it's early in the morning and you're still half asleep but don't joke around like that!"
+                mom "I know you must be sad but you shouldn't behave like this! You ought to give [mystery] a proper goodbye.."
+
+                you "Okay mom.."
+                narrator "You and your mom wait for a while longer but [mystery] was nowhere in sight"
+                mom "Guess I did get the timing wrong.. I thought the flight left at 9:00 am.. Oh my.. I guess it was pm instead.."
+                you "{i}Sigh.. {/i} Let's return back there's no point in waiting here.."
+                mom "Guess you are right.. Let's go shopping for a while and head back home."
+
+                narrator "It was already noon by the time you left the airport.."
+                narraotor "You and your mom went shopping for a while.. atleast it felt like a while.."
+
+                narrator "You and your mom head back home.."
+                narrator "You reached back home and saw that it was already 8:00 pm.. You had been shopping for 8hours straight.."
+
+                narrator "You go to your room to rest for a while.."
+                narrator "Since it was already very late and you had eaten a ton while shipping you decide to doze off.."
+                narrator "You quickly fell asleep and you had a dream about [mystery] again.."
+                narrator "And it went like..."
+                jump start
+
+
+
 
     return
 
@@ -200,9 +276,4 @@ label forgot_route:
     mom "Stop joking around with me and get up.."
     mom "The flight leaves at 9:00 and we have to leave in an hour.."
 
-    return
-
-
-label default_route:
-    you "... ... ..."
     return
