@@ -1,0 +1,6 @@
+define you = Character("You")
+define narrator = Character("Narrator")
+define mystery = Character("???")
+define empty = Character(None)
+define mom = Character("Mom")
+define doctor = Character("Doctor")
