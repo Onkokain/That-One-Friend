@@ -244,22 +244,44 @@
                     you "It was about [mystery].. The girl you told me about..."
                     mom "Honey, I don't know who you're talking about..."
                     empty "{i}What is happening with me.. Why do i remember my mom telling me about [mystery]...{/i}"
-                    speaker "You look at your mom and.."
+                    speaker "You look at your mom and say.."
                     menu:
                             "It's nothing mom I'm fine..":
                                 you "It's nothing mom.. I'm fine.. I just had a bad dream that's all.."
                                 mom "Okay dear.. If you say so.."
-                                # add here
+                                empty "{i} I'm so lost what is this supposed to mean..{/i}"
+                                speaker "You  decide to rest for a while again and think about it tomorrow.."
+                                speaker "With an uneasy mind you take a while but eventually dose off.."
+                                empty "... ... ..."
+                                empty "... ... ..."
+                                empty "{i}I feel like I saw something in my dream.. but.. I don't remember{/i}"
+
+                                ##########
                             "How do you not know who [mystery] is.. You're the one who told me about her..":
                                 you "How do you not know who [mystery] is?? You're the one who told me about her.."
-                                # add here
-
-
-
-
-
-
-
+                                mom "[player]... This is not the time for this.."
+                                you "Mom.. please just tell me what you know about her.. please.."
+                                mom "{i}Sigh...{/i}"
+                                you "Mom.. please.."
+                                mom "[player]... You're not who you truly think you are.. there is something.. something special about you.."
+                                you "What do you mean mom-"
+                                speaker "Before you could complete your sentence your mom runs out.."
+                                speaker "You try to follow her; running towards the stairs.."
+                                speaker "Your mom was trying to go down the stairs but.."
+                                speaker "She slips and falls.."
+                                speaker "Blood pouring out of head..."
+                                speaker "Doctors rush towards her.. but it's already too late..."
+                                speaker "Your mom passes away in that instant...."
+                                you "MOMM!! Mom...  What happened... What did I do.."
+                                speaker "You fell on your knees looking at her dead body lying on the ground near the stairs.."
+                                speaker "There is nothing you can do.."
+                                empty "{i}What just happened.... What did she mean.. by me being special..{/i}"
+                                empty "{i}I can't think straight...{/i}"
+                                speaker "On your knees and crying you succumb to the pain and faint.."
+                                empty "... ... ..."
+                                empty "... ... ..."
+                                speaker "You wake up.. back in the hospital bed.."
+                                you "Where.. where am I.. was that a dream.."
 
 
             if remember==True:

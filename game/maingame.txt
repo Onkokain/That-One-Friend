@@ -49,3 +49,10 @@ if remember=true
 No
 No, I'll skip on the bath for today. You go back to your bed and decide to dose off for a while. Your mom wakes you up and you head for the airport.
 you shop around and return late at night and dose off instantly. and you're stuck in a time loop (YOU MUST BATH)
+
+
+you ask mom for the truth:
+she tells you some hints but dies
+
+you lie to mom:
+she lives
