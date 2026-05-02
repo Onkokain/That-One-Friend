@@ -5,6 +5,6 @@
     "**/*.rpymc": true,
     "**/cache/": true
   },
-  "renpyWarp.sdkPath": "c:/Users/rupra/AppData/Roaming/Code/User/globalStorage/paisleysoftworks.renpywarp/file-downloader-downloads/8.5.2",
+  "renpyWarp.sdkPath": "/home/baralekogyan/.config/Code - OSS/User/globalStorage/paisleysoftworks.renpywarp/file-downloader-downloads/8.5.2",
   "renpyWarp.renpyExtensionsEnabled": "Enabled"
 }

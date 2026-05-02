@@ -247,6 +247,7 @@
                     speaker "You look at your mom and say.."
                     menu:
                             "It's nothing mom I'm fine..":
+                                $ in_dream=False
                                 you "It's nothing mom.. I'm fine.. I just had a bad dream that's all.."
                                 mom "Okay dear.. If you say so.."
                                 empty "{i} I'm so lost what is this supposed to mean..{/i}"
@@ -258,6 +259,7 @@
 
                                 ##########
                             "How do you not know who [mystery] is.. You're the one who told me about her..":
+                                $ in_dream=True
                                 you "How do you not know who [mystery] is?? You're the one who told me about her.."
                                 mom "[player]... This is not the time for this.."
                                 you "Mom.. please just tell me what you know about her.. please.."
@@ -282,6 +284,18 @@
                                 empty "... ... ..."
                                 speaker "You wake up.. back in the hospital bed.."
                                 you "Where.. where am I.. was that a dream.."
+                empty "... ... ..."
+                mom "Goodmorning honey."
+                if in_dream:
+                    you "Mom??! Are you okay??"
+                    mom "What happened honey.. Another bad nightmare??"
+                    empty "{i}Thank god.. Guess it was a dream...{/i}"
+                else:
+                    you "Goodmorning Mom."
+                    
+
+
+
 
 
             if remember==True:
