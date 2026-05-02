@@ -1,97 +1,94 @@
 ﻿label start:
     # play bg music eerie
-    $ mystery = "??#@!"
-    window hide
     scene bg black
     with fade
-    pause 0.3
-    window show
-    death "Have you ever wished you were never born.. or wished you could die without affecting those around you.."
-    window hide
+    death "Have you ever {i}wished{/i} you were never born.. or wished you could {color=#444444}{b}{size=+6}die{/size}{/b}{/color} without any {i}consequences{/i}.."
     menu:
         "Yes..":
-            you "Yes.. I have.."
-            death "I know how you feel.."
+            you "Yes.. {b}I have{/b}.."
+            death "I know how you {i}feel{/i}.."
             $ wanna_die=True
         "No..":
-            you "No.. Why would I ever wish that??"
-            death "Well.. I wish I could say the same for myself.."
+            you "No.. Why would I ever {i}wish{/i} that??"
+            death "Well.. I wish I could say the same for {b}myself{/b}.."
             $ wanna_die=False
         "I don't know..":
-            you "I don't know.. I have never ever thought about that before.."
-            death "Nobody does for certain dear.."
+            you "I don't know.. I have {b}never{/b} ever thought about that before.."
+            death "{i}Nobody{/i} does for certain dear.."
             $ wanna_die=False
-    window show
     #stop bg music eerie and play bg music default at park
     scene bg sunset with fade
-    mystery "Look at the setting sun. it looks so beautiful.."
-    mystery "I wish I could stay with you like this forever and ever.."
+    mystery "Look at the setting {color=#ff5e3a}sun{/color}. it looks so {color=#ffb6c1}beautiful{/color}.."
+    mystery "I {i}wish{/i} I could stay with you like this {u}forever and ever{/u}.."
 
     scene bg park with fade
-    mystery "Lets marry when we get older okay?"
-    you "Yeah... I'll always be with you, no matter what."
-    mystery "I know you will.. I'm sure you will.."
-    you "I will.. no matter what..."
-    mystery "I love y-------"
+    mystery "Lets {size=+6}marry{/size} when we get older okay?"
+    you "{i}Yeah...{i} I'll {b}{u}always{/u}{/b} be with you, {size=+4}no matter what{/size}."
+    mystery "I {b}know{b} you will.. I'm {i}sure{/i} you will.."
+    you "I {b}{u}will{/u}{/b}.. no matter what..."
+    mystery "{size=+2}{color=#ffb6c1}I love y---{/color}{/size}"
     empty "... ... ..."
     empty "... ... ..."
     # bg music fades out and alarm starts playing
     scene bg bed
     with fade
-    empty "buzz.. buzz.. buzz.. buzz.."
-    speaker "Your alarm rings loudly, waking you up from sleep."
-    you "Huh...? What?? Was I in a dream?"
-    you "Who was that? I don't remember anything about her..."
-    you "Was she  about to say... 'I love you'??"
-    you "That was a strange dream.. strange indeed.."
-    you "I wish I knew who she was.. I wish I could get the chance to see her again.."
+    empty "{b}{size=+4}buzz.. buzz.. buzz.. buzz..{/size}{/b}"
+    speaker "Your alarm rings {b}loudly{b}, waking you up from sleep."
+    you "{i}grunting..{/i} Huh what?? Was I in a dream?"
+    you "Who was that? I {b}don't{/b} remember anything about her..."
+    you "Was she  about to say... {color=#ffb6c1}'I love you'{/color}??"
+    you "That was a {i}strange{/i} {b}dream{/b}.. strange indeed.."
+    you "I {i}wish{/i} I knew who {i}she{/i} was.. I wish I could get the {i}chance{/i} to see her again.."
     empty "... ... ..."
     # turning off alarm sound
-    # alarm stops
-
-    scene bg black
+    scene bg room
     with fade
 
     speaker "It was an early summer morning.."
     speaker "You wake up to the sound of the alarm"
     speaker "Your mom hears you move around in the bed and asks you to get up."
+    # start playing tap water sound
+    scene bg kitchen
+    with fade
+    speaker "She is washing dishes and you hear the sound of the water flowing from the tap clearly.."
+    # stop playing tap water sound
     speaker "You hear her but you don't want to get up.. not yet.. not until you figure out who that girl was.."
-    speaker "Your mom shouts again, 'You..? get up now!'"
-    speaker "Wait.. What was your name again?"
+    speaker "Your mom {b}shouts{b} again.."
+    mom "{b}{i}You..?{/i}{/b} get up {b}right now!{/b}"
+    speaker "Wait.. What was your {b}name{/b} again?"
 
     $ player = renpy.input("What is your name?")
     $ player = player.strip()
     $ player = player if player else 'Brandon'
 
-    scene bg kitchen
-    with fade
     # water flowing music starts to play
-
-    mom "[player], get up now! It's already 7:00 do you plan on sleeping all day?"
+    mom "[player], get up {b}now{/b}! It's already 7:00 do you plan on sleeping all day?"
     # water flowing music fades out
     scene bg bed with fade
-
     speaker "Your mom bolts into your room and asks you to get up.."
-    mom "Wake up already, [player]. It's already early in the morning, you don't want to sleep all day do you?"
-    you "No mom, I'll get up soon!"
-    mom "Today is an important day for you. Don't forget."
-    you "Important? how is today important??"
-    mom "Did you forget.. you have to see [mystery] off at the Airport today."
-    mom "She's leaving today and I think her flight leaves at 9:00 am. So we have to leave in around an hour.."
+    mom "I said..{size=+11}Wake up{/size} [player]. It's already early in the morning, you don't want to sleep {b}all day{/b}, {i}do you{/i}?"
+    you "No mom waitt, I'll get up {u}{i}soon{/i}{u}!"
+    mom "Today is an {u}important{/u} day for you. Don't forget."
+    you "{b}{size=+5}Important{/size}{/b}? how is today important??"
+    mom "Did you forget.. you have to see [mystery] off at the {i}Airport{/i} today."
+    mom "She's leaving today and {i}I think{/i} her flight leaves at 9:00 am. So we have to leave in around an hour.."
     you " [mystery]?? Who's that??"
-    speaker "Your mom {i}Sighs..{/i}"
-    mom "Stop joking around with me and get up.."
-    mom "Did you forget about [mystery] before she even left?"
+    mom "{i}Sigh....{/i} {b}Stop{/b} joking around with me and get up.."
+    mom "Are you telling me that you forgot about [mystery] {b}{size=+3}before{/size}{/b} she even left?"
     # eerie bg music starts playing
     menu:
         "How could i ever forget about [mystery]..":
             $ remember = True
-            call remember_route
-
+            you "How could i even forget about [mystery].. I've known her for ages.."
+            you "It's just sad.. sad to see her go.."
         "I really don't know who [mystery] is..":
             $ remember= False
-            call forgot_route
+            you "Who is [mystery]"
+            mom "What do you mean you don't know who [mystery] is? She has been with you since you were born!!"
+            you "Since I was born?? I don't remember anything about her.."
 
+            mom "Stop joking around with me and get up before I get mad.. I have other works to attend to.."
+            mom "The flight leaves at 9:00 and we have to leave in an hour.."
     mom "Now hurry up and get ready.. we have to leave to see her off soon.."
     mom "You wouldn't want to make her sad by being late right??"
 
@@ -179,7 +176,7 @@
                     scene bg hospital with fade
                     speaker 'The doctor and your mom are talking to each other '
                     doctor "The operation was a success he should wake up anytime soon."
-                    mother "Ohh thank god.. thank you so much doctor.. I'm ever so grateful.."
+                    mom "Ohh thank god.. thank you so much doctor.. I'm ever so grateful.."
                     doctor 'He should be fine but he might have some memory loss..'
                     doctor "His brain was damaged pretty badly.. so his words might be slurry or what he's saying might not make sense.."
 
@@ -204,7 +201,7 @@
                     mom "I never said that dear.. You've hurt your head.. you need to rest and recover.."
                     speaker "The doctor whispers to your mom.."
                     doctor "{i}You don't need to worry about it. He's having some memory mismatches. A good night rest and he'll be all fine tomorrow.{/i}"
-                    mother "{i} Oh thank you doctor.. I hope he gets better as soon as possible {/i}"
+                    mom "{i} Oh thank you doctor.. I hope he gets better as soon as possible {/i}"
                     speaker "Your mom looks at you and smiles thinking you didn't hear the two of them.. but you heard everything.."
 
                     empty "{i}Memory loss?? What are they talking about{/i}"
@@ -290,9 +287,15 @@
                     you "Mom??! Are you okay??"
                     mom "What happened honey.. Another bad nightmare??"
                     empty "{i}Thank god.. Guess it was a dream...{/i}"
+                    you "No mom I'm fine it was nothing.."
+                    mom "If you say so honey.."
                 else:
                     you "Goodmorning Mom."
-                    
+                    mom "Did you sleep well?"
+                    you "Yeah.. I think I had a dream but I don't remember what it was.."
+                    mom "Don't worry honey it was probably nothing important!"
+                    mom "Yeah I think so too..."
+
 
 
 
@@ -302,7 +305,7 @@
                 empty "{i} I still can't stop thinking about her.. who is she?? {/i}"
                 empty "{i}I shouldn't have lied to mom about knowing who she was..{/i}"
                 empty "{i} It just complicated things even more..{/i}"
-                empty "{i} Is [unknown] even the same age as me.. or is she a friend of my mom's??{/i}"
+                empty "{i} Is [mystery] even the same age as me.. or is she a friend of my mom's??{/i}"
                 empty "{i} I don't know.. The way my mom told me about her made me feel like she was someone I am supposed to know..{/i}"
                 empty "{i} I'll go ask mom about her..{/i}"
 
@@ -478,7 +481,7 @@
                 mom "Guess you are right.. Let's go shopping for a while and head back home."
 
                 speaker "It was already noon by the time you left the airport.."
-                narraotor "You and your mom went shopping for a while.. atleast it felt like a while.."
+                speaker "You and your mom went shopping for a while.. atleast it felt like a while.."
 
                 speaker "You and your mom head back home.."
                 speaker "You reached back home and saw that it was already 8:00 pm.. You had been shopping for 8hours straight.."
@@ -533,18 +536,3 @@
     return
 
 
-label remember_route:
-    you "How could i even forget about [mystery].. I've known her for ages.."
-    you "It's just sad.. sad to see her go.."
-    return
-
-
-label forgot_route:
-    you "Who is [mystery]"
-    mom "What do you mean you don't know who [mystery] is? She has been with you since you were born!!"
-    you "Since I was born?? I don't remember anything about her.."
-
-    mom "Stop joking around with me and get up before I get mad.. I have other works to attend to.."
-    mom "The flight leaves at 9:00 and we have to leave in an hour.."
-
-    return
