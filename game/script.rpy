@@ -23,7 +23,7 @@
 
     scene bg park with fade
     mystery "Lets {size=+6}marry{/size} when we get older okay?"
-    you "{i}Yeah...{i} I'll {b}{u}always{/u}{/b} be with you, {size=+4}no matter what{/size}."
+    you "{i}Yeah...{/i} I'll {b}{u}always{/u}{/b} be with you, {size=+4}no matter what{/size}."
     mystery "I {b}know{b} you will.. I'm {i}sure{/i} you will.."
     you "I {b}{u}will{/u}{/b}.. no matter what..."
     mystery "{size=+2}{color=#ffb6c1}I love y---{/color}{/size}"
@@ -77,33 +77,34 @@
     mom "Are you telling me that you forgot about [mystery] {b}{size=+3}before{/size}{/b} she even left?"
     # eerie bg music starts playing
     menu:
-        "How could i ever forget about [mystery]..":
+        "How could I ever forget about [mystery]..":
             $ remember = True
-            you "How could i even forget about [mystery].. I've known her for ages.."
-            you "It's just sad.. sad to see her go.."
+            you "How could I even {i}forget{i} about [mystery].. I've {i}known her{/i} for ages.."
+            you "It's just sad.. {b}sad{/b} to see her go.."
+            mom "{i}Don't worry dear{/i}.. You'll see her again one day.."
+            you "I {i}hope{/i} so too mom.."
         "I really don't know who [mystery] is..":
             $ remember= False
-            you "Who is [mystery]"
-            mom "What do you mean you don't know who [mystery] is? She has been with you since you were born!!"
-            you "Since I was born?? I don't remember anything about her.."
+            you "Mom {i}I don't know{/i} who you're talking about.. I don't know who [mystery] is.."
+            mom "{size=+6}What do you mean{/size} you don't know who [mystery] is? She has been with you {b}since you were born{/b}!!"
+            you "{b}{size=+4}Since I was born{/size}{/b}?? I don't remember {i}anything{/i} about her.."
+            mom "Stop joking around with me and get up before I get {b}{size=+4}mad{/size}{/b}.. I have other works to {i}attend{/i} to.."
+            mom "The flight leaves at {b}{size=+3}9:00{/size}{/b}} and we have to leave in an hour.."
 
-            mom "Stop joking around with me and get up before I get mad.. I have other works to attend to.."
-            mom "The flight leaves at 9:00 and we have to leave in an hour.."
-    mom "Now hurry up and get ready.. we have to leave to see her off soon.."
-    mom "You wouldn't want to make her sad by being late right??"
+    mom "Now hurry up and {u}get ready{/u}.. we have to leave to see {i}her{/i} off soon.."
+    mom "You wouldn't want to make {i}her{/i} sad by being late, right??"
 
-    you "I don't mom.. I'll go get ready right away.."
-    empty "{i}You don't know who she is but still decide to play along ahead instead of getting your mom angry..{/i}"
-    you "I think i'll go take a bath, can you get my clothes ready for me?"
-    mom "Yeah they're already on the hanger I thought you'd be excited and wake up before me today.."
-    you "Oh.. Thanks mom.."
+    you "I {i}don't{/i} mom.. I'll go {u}get ready{/u} right away.."
+    speaker "You don't know who [mystery] is but you still decide to play along, ahead instead of getting your mom angry.."
+    you "I think i'll go take a bath now, can you get my clothes ready for me?"
+    mom "Yeah they're already on the hanger I thought you'd be {b}excited{/b} and wake up before me today.."
+    you "{i}Oh..{/i} Thanks mom.."
 
     scene bg washroom with fade
 
     empty"{i}I still cant stop thinking about her..{/i}"
     empty"{i} Who is [mystery].. is it the same person as in my dream??{/i}"
-    empty "{i}No.. That couldn't be I don't even know who this [mystery] person is and the girl.. in my dream.. said she.. loved me??{/i}"
-    empty "{i}I don't know what's even going on anymore..{/i}"
+    empty "{i}No.. That couldn't be I don't even know who this [mystery] person is and the girl.. in my dream... I.. I don't know anymore..{/i}"
     empty"{i} Guess it's time to take a shower..{/i}"
     empty"{i} It's a cold day.. Do i really have to.."
     menu:
@@ -111,26 +112,26 @@
             empty"{i} Guess I do have to take a shower.. {/i}"
             scene bg shower with fade
             speaker "You take off your clothes and step into the shower.."
-
-            if remember==False:
+            if not remember:
                 empty "{i} I still can't stop thinking about her.. who is she?? {/i}"
                 empty "{i} How do i even know her...{/i}"
                 empty "{i} Mom told me that she has been with me since I was born.. but how do i not remember who she is... {/i}"
-                empty "THUD!!"
-                you "OWWWWW!!"
+                empty "{size=+12}THUD!!{/size}"
+                you "{size=+12}OWWWWW!!{/size}"
                 speaker "You slip on the wet floor and hit your head on the wall.."
-                speaker "You touch your head... there's a lot of blood on your hands.."
-                speaker "Your breathing gets slower..."
+                speaker "You touch your head... there's a lot of {color=#b22222}blood{/color} on your hands.."
+                speaker "Your {b}breathing{/b} gets {i}slower{/i}..."
                 if wanna_die==True:
-                    empty "{i} I guess this is it for me.. {/i}"
+                    empty "{i} I guess {b}{u}this is it{/u}{/b} for me.. {/i}"
                     empty "{i} I hope I can see her again.. {/i}"
 
-                    speaker 'You slowly lose yourself..'
-                    speaker 'The blood from your head starts to pool around you..'
-                    speaker 'You slowly lose consciousness...'
-                    speaker 'Surrounded by the memories of her... You die..'
-                    speaker 'Die in vain...'
-                    empty "The end..."
+                    speaker 'You slowly {i}lose{/i} yourself..'
+                    speaker 'The {color=#b22222}blood{/color} from your head starts to pool around you..'
+                    speaker 'You slowly lose {b}consciousness{/b}...'
+                    speaker 'Surrounded by the memories of [mystery]... You {b}die{/b}..'
+                    speaker '{i}Die in vain...{/i}'
+                    empty "{size=+10}The end...{/size}"
+                    $ renpy.quit()
                 elif wanna_die==False:
                     empty "{i} There is no way I'm going out like this..{/i}"
                     empty "{i} I have to get out of here..{/i}"
@@ -281,20 +282,20 @@
                                 empty "... ... ..."
                                 speaker "You wake up.. back in the hospital bed.."
                                 you "Where.. where am I.. was that a dream.."
-                empty "... ... ..."
-                mom "Goodmorning honey."
-                if in_dream:
-                    you "Mom??! Are you okay??"
-                    mom "What happened honey.. Another bad nightmare??"
-                    empty "{i}Thank god.. Guess it was a dream...{/i}"
-                    you "No mom I'm fine it was nothing.."
-                    mom "If you say so honey.."
-                else:
-                    you "Goodmorning Mom."
-                    mom "Did you sleep well?"
-                    you "Yeah.. I think I had a dream but I don't remember what it was.."
-                    mom "Don't worry honey it was probably nothing important!"
-                    mom "Yeah I think so too..."
+                    empty "... ... ..."
+                    mom "Goodmorning honey."
+                    if in_dream:
+                        you "Mom??! Are you okay??"
+                        mom "What happened honey.. Another bad nightmare??"
+                        empty "{i}Thank god.. Guess it was a dream...{/i}"
+                        you "No mom I'm fine it was nothing.."
+                        mom "If you say so honey.."
+                    else:
+                        you "Goodmorning Mom."
+                        mom "Did you sleep well?"
+                        you "Yeah.. I think I had a dream but I don't remember what it was.."
+                        mom "Don't worry honey it was probably nothing important!"
+                        mom "Yeah I think so too..."
 
 
 
