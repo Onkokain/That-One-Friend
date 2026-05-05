@@ -1,4 +1,31 @@
-﻿label start:
+﻿init 1:
+    image bg black:
+        "bg black.jpeg"
+        zoom 10
+    image bg sunset:
+        "bg sunset.jpeg"
+        zoom 10
+    image bg ambulance:
+        "bg ambulance.jpeg"
+        zoom 10
+    image bg room:
+        "bg bed.jpeg"
+        zoom 7
+    image bg hospital:
+        "bg hospital.jpeg"
+        zoom 10
+    image bg kitchen:
+        "bg kitchen.jpeg"
+        zoom 7
+    image bg park:
+        "bg park.jpeg"
+        zoom 8
+    image bg washroom:
+        "bg washroom.jpeg"
+        zoom 10
+
+
+label start:
     # play bg music eerie
     scene bg black
     with fade
@@ -30,7 +57,7 @@
     empty "... ... ..."
     empty "... ... ..."
     # bg music fades out and alarm starts playing
-    scene bg bed
+    scene bg room
     with fade
     empty "{b}{size=+4}buzz.. buzz.. buzz.. buzz..{/size}{/b}"
     speaker "Your alarm rings {b}loudly{b}, waking you up from sleep."
@@ -55,7 +82,15 @@
     speaker "You hear her but you don't want to get up.. not yet.. not until you figure out who that girl was.."
     speaker "Your mom {b}shouts{b} again.."
     mom "{b}{i}You..?{/i}{/b} get up {b}right now!{/b}"
+    $ times_played=0
     speaker "Wait.. What was your {b}name{/b} again?"
+    if times_played==1:
+        you "Huh? Didn't I tell this to you before..."
+    if times_played==2:
+        you "This is getting mildly infuriating.."
+    if times_played==3:
+        you "Okay what am I supposed to do.."
+        death "Try taking a bath {b}SHE{/b} doesn't like how you smell..."
 
     $ player = renpy.input("What is your name?")
     $ player = player.strip()
@@ -64,7 +99,7 @@
     # water flowing music starts to play
     mom "[player], get up {b}now{/b}! It's already 7:00 do you plan on sleeping all day?"
     # water flowing music fades out
-    scene bg bed with fade
+    scene bg room with fade
     speaker "Your mom bolts into your room and asks you to get up.."
     mom "I said..{size=+11}Wake up{/size} [player]. It's already early in the morning, you don't want to sleep {b}all day{/b}, {i}do you{/i}?"
     you "No mom waitt, I'll get up {u}{i}soon{/i}{u}!"
@@ -110,7 +145,7 @@
     menu:
         "Yes, Take a shower..":
             empty"{i} Guess I do have to take a shower.. {/i}"
-            scene bg shower with fade
+            scene bg washroom with fade
             speaker "You take off your clothes and step into the shower.."
             if not remember:
                 empty "{i} I still can't stop thinking about her.. who is she?? {/i}"
@@ -190,7 +225,7 @@
                     mom "You had me {b}so worried{/b} thank god you're okay.."
                     you "{b}What happened??{/b} Why am I here??"
 
-                    scene bg shower with fade
+                    scene bg washroom with fade
                     mom "You had an {b}accident{/b} in the shower! You slipped and fell and hit your {i}head{i} on the wall.."
                     mom "{b}Thank god{/b} you're okay now.."
                     speaker 'You try to move around but the doctor {b}stops{/b} you..'
@@ -211,14 +246,14 @@
                     empty "{i}{b}Memory loss??{/b} What are they talking about{/i}"
                     mom "You {b}need{/b} to rest dear. Sleep for a while, while I bring some fruits for you to eat."
                     you "I don't understand... I {b}clearly{/b} remember you telling me about [mystery].."
-                    mom "You hurt your {b}head{/b} and lost a lot of blood dear.. take rest for now you'll be all fine tomorrow.."
-                    you "If you say so mom.."
+                    mom "You hurt your {b}head{/b} and lost a lot of {color=#b22222}blood{/color} dear.. take rest for now you'll be all fine tomorrow.."
+                    you "If you say so mom..."
                     ## stying is done till here!!!!!!!!
                     # main ending 1
                     speaker "Your mom and the doctor leave the room and you're left {i}all alone{/i} in the hospital room.."
-                    empty "{i} Was that.. all just a dream.. {/i}"
+                    empty "{i} Was that... all just a dream... {/i}"
                     empty "{i}Does {mystery} exist....{/i}"
-                    empty "{i}Was it all just a dream..{/i}"
+                    empty "{i}Was it all.. all just a dream..{/i}"
                     empty "{i}No... That can't be..{/i}"
                     empty "{i}I can't think straight..{/i}"
                     empty "{i}Let me try sleeping for now..{/i}"
@@ -226,26 +261,30 @@
                     speaker "You quickly fall asleep due to some of the anaesthesia still being in your system..."
 
                     scene bg park with fade
-                    you "Huh?? Where am I???"
+                    you "{size=+4}Huh??{/size} Where am I???"
                     you "I was in the {i}hospital{/i} right before this.. how did I get here.."
                     mystery "{i}London bridge is falling down, falling down, falling down.....{/i}"
                     mystery "{i}London bridge is falling down, my fair lady..{/i}"
                     you "{i}Who{/i}.. Who's there... {b}Who's singing that{/b}.."
-                    mystery "Do you not remember me..."
+                    mystery "Do you not remember who I am..."
                     mystery "You {b}promised{/b}... promised to stay with me forever and ever.."
                     you "I don't know who you are..."
-                    mystery "Guess you really don't remember me..."
-                    speaker "You hear a loud hissing sound and fell on your knees covering your ears."
+                    mystery "{i}Guess{/i} you really don't remember me..."
+                    speaker "You hear a loud  sound ringing in your ears and fell on your knees covering your ears.."
                     speaker "The loud {i}hissing{/i} sound causes you to lose conciousness."
                     you "{size=+8}AHHHH! WHAT IS THAT SOUND??{/size}"
-                    empty "{i}Huhh.. Where am I.. This is the.. hospital?{/i}"
+                    speaker "The sound causes you to faint..."
+                    empty "... ... ..."
+                    empty "... ... ..."
+                    empty "{i}Huhh.. Where am I.. This is the.. {size=+6}HOSPITAL?!!{/size}{/i}"
                     speaker "Your {b}scream{/b} was heard by your mother who was waiting just outside the room..."
-                    mom "What happened?? Are you okay??"
+                    mom "{size=+6}What happened???{/size} Are you okay??"
                     you "I don't know.. I just had a bad dream..."
-                    mom "What was the dream about??"
+                    mom "What was the {i}dream{/i} about??"
                     you "It was about [mystery].. The girl you told me about..."
                     mom "Honey, I don't know who you're talking about..."
                     empty "{i}What is happening with me.. Why do i remember my mom telling me about [mystery]...{/i}"
+                    empty "{i}I don't know if she's lying or I'm just imagining things..{/i}"
                     speaker "You look at your mom and say.."
                     menu:
                             "It's nothing mom I'm fine..":
@@ -254,7 +293,7 @@
                                 mom "Okay dear.. If you say so.."
                                 empty "{i} I'm so lost what is this supposed to mean..{/i}"
                                 speaker "You  decide to rest for a while again and think about it tomorrow.."
-                                speaker "With an uneasy mind you take a while but eventually dose off.."
+                                speaker "With an uneasy mind you take a while but eventually dose off..."
                                 empty "... ... ..."
                                 empty "... ... ..."
                                 empty "{i}I feel like I saw something in my dream.. but.. I don't remember{/i}"
@@ -268,15 +307,21 @@
                                 mom "{i}Sigh...{/i}"
                                 you "Mom.. please.."
                                 mom "[player]... You're not who you truly think you are.. there is something.. something special about you.."
-                                you "What do you mean mom-"
+                                you "What do you mean mom??...."
                                 speaker "Before you could complete your sentence your mom runs out.."
-                                speaker "You try to follow her; running towards the stairs.."
-                                speaker "Your mom was trying to go down the stairs but.."
+                                empty "{i}{size=+6}Huh??..{/size} Why is she running away..{/i}"
+                                speaker "You try to follow her and go out the room.."
+                                speaker "You see her trying to go down the stairs and chase her.."
+                                speaker "Your mom was trying to rush down the stairs.."
+                                empty "... ... ..."
+                                empty "... ... ..."
+                                empty "... ... ..."
                                 speaker "She slips and falls.."
-                                speaker "Blood pouring out of head..."
-                                speaker "Doctors rush towards her.. but it's already too late..."
-                                speaker "Your mom passes away in that instant...."
-                                you "MOMM!! Mom...  What happened... What did I do.."
+                                speaker "{{color=#b22222}Blood{/color} pouring out of head..."
+                                speaker "Doctors rush towards her..."
+                                speaker "But... It's already {b}too late{/b}..."
+                                speaker "Your mom.. dies.. {b}instantly{/b}...."
+                                you "{size}MOMM!!{/size} {i}Mom...{/i}  What happened... What did I do.."
                                 speaker "You fell on your knees looking at her dead body lying on the ground near the stairs.."
                                 speaker "There is nothing you can do.."
                                 empty "{i}What just happened.... What did she mean.. by me being special..{/i}"
@@ -300,6 +345,9 @@
                         you "Yeah.. I think I had a dream but I don't remember what it was.."
                         mom "Don't worry honey it was probably nothing important!"
                         mom "Yeah I think so too..."
+                    narrator "Congrats on playing through part 1 of this game!"
+                    narrator "You've unlocked one of the two set endings!"
+                    narrator "part 2 of the story coming soon.."
 
 
 
