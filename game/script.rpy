@@ -493,6 +493,8 @@ label start:
                             speaker "You hear someone whisper into your ears.."
                             empty "{i}WheN you travEl bAck in time, youR present becomes Your past and yOur past becomes yoUr future But yoU can'T change your past and make it affect the Future but you cAn change the pResent by changing the future..{/i}"
                             # main ending 1
+                            narrator "You've officially reached one of the two endings set for the game!"
+                            narrator "Part 2 of the game coming soon!!"
                     window show
 
 
