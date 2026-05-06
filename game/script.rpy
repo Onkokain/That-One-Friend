@@ -1,28 +1,35 @@
 ﻿init 1:
     image bg black:
         "bg black.jpeg"
-        zoom 10
+        fit "cover"
+
     image bg sunset:
         "bg sunset.jpeg"
-        zoom 10
+        fit "cover"
+
     image bg ambulance:
-        "bg ambulance.jpeg"
-        zoom 10
+        "bg ambulance.webp"
+        fit "cover"
+
     image bg room:
-        "bg bed.jpeg"
-        zoom 7
+        "bg room.jpeg"
+        fit "cover"
+
     image bg hospital:
         "bg hospital.jpeg"
-        zoom 10
+        fit "cover"
+
     image bg kitchen:
         "bg kitchen.jpeg"
-        zoom 7
+        fit "cover"
+
     image bg park:
-        "bg park.jpeg"
-        zoom 8
+        "bg park.jpg"
+        fit "cover"
+
     image bg washroom:
         "bg washroom.jpeg"
-        zoom 10
+        fit "cover"
 
 
 label start:
@@ -228,6 +235,7 @@ label start:
                     scene bg washroom with fade
                     mom "You had an {b}accident{/b} in the shower! You slipped and fell and hit your {i}head{i} on the wall.."
                     mom "{b}Thank god{/b} you're okay now.."
+                    scene bg hospital with fade
                     speaker 'You try to move around but the doctor {b}stops{/b} you..'
                     doctor "{b}Don't{/b} try to move around yet.. You're {b}hurt bad{/b} you need to let your body {i}heal{/i}.."
 
@@ -274,8 +282,10 @@ label start:
                     speaker "The loud {i}hissing{/i} sound causes you to lose conciousness."
                     you "{size=+8}AHHHH! WHAT IS THAT SOUND??{/size}"
                     speaker "The sound causes you to faint..."
+                    scene bg black with fade
                     empty "... ... ..."
                     empty "... ... ..."
+                    scene bg hospital with fade
                     empty "{i}Huhh.. Where am I.. This is the.. {size=+6}HOSPITAL?!!{/size}{/i}"
                     speaker "Your {b}scream{/b} was heard by your mother who was waiting just outside the room..."
                     mom "{size=+6}What happened???{/size} Are you okay??"
@@ -331,7 +341,11 @@ label start:
                                 empty "... ... ..."
                                 speaker "You wake up.. back in the hospital bed.."
                                 you "Where.. where am I.. was that a dream.."
+                    scene bg black with fade
                     empty "... ... ..."
+                    empty "... ... ..."
+                    empty "... ... ..."
+                    scene bg hospital with fade
                     mom "Goodmorning honey."
                     if in_dream:
                         you "Mom??! Are you okay??"
@@ -345,16 +359,16 @@ label start:
                         you "Yeah.. I think I had a dream but I don't remember what it was.."
                         mom "Don't worry honey it was probably nothing important!"
                         mom "Yeah I think so too..."
-                    narrator "Congrats on playing through part 1 of this game!"
-                    narrator "You've unlocked one of the two set endings!"
-                    narrator "part 2 of the story coming soon.."
+                    speaker "Congrats on playing through part 1 of this game!"
+                    speaker "You've unlocked one of the two set endings!"
+                    speaker "part 2 of the story coming soon.."
 
 
 
 
 
 
-            if remember==True:
+            if remember:
                 empty "{i} I still can't stop thinking about her.. who is she?? {/i}"
                 empty "{i}I shouldn't have lied to mom about knowing who she was..{/i}"
                 empty "{i} It just complicated things even more..{/i}"
@@ -374,7 +388,9 @@ label start:
                 mom "... ...Can you walk?"
                 you "I don't think I can.."
                 mom "{i}Sigh..{/i} Let me help you get out.."
+                scene bg black with fade
                 speaker "Your mom helps you get out of the shower and helps you to your bed.."
+                scene bg room with fade
                 speaker "She helps you get comfortable and brings ice from the fridge and puts it on your ankle.."
                 speaker "You were about to ask her about [mystery] but she suddenly interrupts you.."
                 mom "How'll you be able to go to the airport now?? [mystery] will be so sad.."
@@ -384,8 +400,9 @@ label start:
                 mom "I'll go to the airport alone and see [mystery] off.. I hope she'll understand how dumb you are and what happened to you.."
                 you "Yeah mom.. I hope so too.."
                 mom "Now go sleep for a while and take care of yourself.."
-
+                scene bg airport with fade
                 speaker "Your mom leaves for the airport and you're left alone in the room.."
+                scene bg room with fade
                 you "I wonder who [mystery] is.. I wish I could go see her..."
                 you "Guess I'll ask mom to tell me who she is when she returns back home.."
 
@@ -400,7 +417,9 @@ label start:
                 you "What?? What happened to mom?? Is she okay???"
                 neighbor "She.. she got into an accident.. She's in the hospital right now.. The doctors are saying she's in critical condition.. They told me.. told me I should inform.. inform you.."
                 you "Oh my god.. Oh my god.. I have to come.. I'm coming right now.."
+                scene bg black with fade
                 speaker "You quickly get up.. not caring about your ankle and rush straight to the hospital.."
+                scene bg hospital with fade
                 speaker "You see the doctor there and decide to talk to him.."
                 you "Doctor.. How is my mom doing?? Is she going to be okay??"
                 doctor "Your mom is in critical condition right now.. We're trying our best to save her but I can't say for sure if she'll make it.."
@@ -474,7 +493,6 @@ label start:
                     death "I'm the one who asked you the question in the beginning.."
                     death "Now I give you the opportunity to answer the same question again.."
                     death "Do you wish you were never born or wish you could die without any consequences.."
-                    window hide
                     menu:
                         "Yes..":
                             you "Yes.. I have.."
@@ -492,23 +510,20 @@ label start:
                             death "You have my blessing.."
                             speaker "You hear someone whisper into your ears.."
                             empty "{i}WheN you travEl bAck in time, youR present becomes Your past and yOur past becomes yoUr future But yoU can'T change your past and make it affect the Future but you cAn change the pResent by changing the future..{/i}"
+                            scene bg black with fade
+                            empty "... ... ..."
+                            empty "... ... ..."
+                            empty "... ... ..."
                             # main ending 1
-                            narrator "You've officially reached one of the two endings set for the game!"
-                            narrator "Part 2 of the game coming soon!!"
-                    window show
-
-
-
-
-
-
-
-
+                            speaker "You've officially reached one of the two endings set for the game!"
+                            speaker "Part 2 of the game coming soon!!"
 
         "No, I don't want to take a shower..":
             empty"{i} I don't really feel like taking a shower.. guess I'll skip it.. {/i}"
             speaker "You decide to skip the shower and just rest for a while.."
+            scene bg black with fade
             speaker "You go back to your bed and lay down for a while.."
+            scene bg room with fade
 
             if remember==False:
                 empty "{i} I still can't stop thinking about her.. who is she?? {/i}"
@@ -519,8 +534,10 @@ label start:
                 mom "Lets go it's time to go to the airport.."
 
                 speaker "You wake up to the sound of your mom yelling.."
+                scene bg black with fade
                 you "Yeah.. I'm getting up.. Let's go."
                 speaker "You get up put your nice clothes on and head out to the airport with your mom.."
+                scene bg airport with fade
                 mom "I guess we arrived too early.. we have to wait for a while.."
                 speaker "You and your mom wait for a while for [mystery] to arrive.."
                 mom "Did i get the timing wrong? I thought the flight left at 9:00 am.. Oh my.. was it pm instead.."
@@ -532,13 +549,16 @@ label start:
                 you "Okay mom.."
                 speaker "You and your mom wait for a while longer but [mystery] was nowhere in sight"
                 mom "Guess I did get the timing wrong.. I thought the flight left at 9:00 am.. Oh my.. I guess it was pm instead.."
+                scene bg black with fade
                 you "{i}Sigh.. {/i} Let's return back there's no point in waiting here.."
                 mom "Guess you are right.. Let's go shopping for a while and head back home."
+                scene bg market with fade
 
                 speaker "It was already noon by the time you left the airport.."
                 speaker "You and your mom went shopping for a while.. atleast it felt like a while.."
 
                 speaker "You and your mom head back home.."
+                scene bg room with fade
                 speaker "You reached back home and saw that it was already 8:00 pm.. You had been shopping for 8hours straight.."
 
                 speaker "You go to your room to rest for a while.."
@@ -547,7 +567,7 @@ label start:
                 speaker "And it went like..."
                 jump start
             elif remember==True:
-
+                scene bg room
                 empty "{i} I lied to mom about knowing who [mystery] was.. but who is she?? {/i}"
                 empty "{i} I can't stop thinking about her.. Should I maybe just ask mom?.. {/i}"
                 empty "{i} No.. I don't think I should ask her.. She'll probably think I'm insane..{/i}"
@@ -555,10 +575,11 @@ label start:
 
                 mom "[player], are you just going to lay there all day??"
                 mom "Lets go it's time to go to the airport.."
-
+                scene bg black with fade
                 speaker "You wake up to the sound of your mom yelling.."
                 you "Yeah.. I'm getting up.. Let's go."
                 speaker "You get up put your nice clothes on and head out to the airport with your mom.."
+                scene bg airport with fade
                 mom "I guess we arrived too early.. we have to wait for a while.."
                 speaker "You and your mom wait for a while for [mystery] to arrive.."
                 mom "Did i get the timing wrong? I thought the flight left at 9:00 am.. Oh my.. was it pm instead.."
@@ -570,13 +591,15 @@ label start:
                 you "Okay mom.."
                 speaker "You and your mom wait for a while longer but [mystery] was nowhere in sight"
                 mom "Guess I did get the timing wrong.. I thought the flight left at 9:00 am.. Oh my.. I guess it was pm instead.."
+                scene bg black with fade
                 you "{i}Sigh.. {/i} Let's return back there's no point in waiting here.."
                 mom "Guess you are right.. Let's go shopping for a while and head back home."
-
+                scene bg market with fade
                 speaker "It was already noon by the time you left the airport.."
                 narraotor "You and your mom went shopping for a while.. atleast it felt like a while.."
 
                 speaker "You and your mom head back home.."
+                scene bg room with fade
                 speaker "You reached back home and saw that it was already 8:00 pm.. You had been shopping for 8hours straight.."
 
                 speaker "You go to your room to rest for a while.."
@@ -585,9 +608,4 @@ label start:
                 speaker "And it went like..."
                 jump start
 
-
-
-
     return
-
-

@@ -1,6 +1,6 @@
 # That One Friend
 
-Demo: <Coming-Soon>
+Demo: https://baralekogyan.itch.io/that-one-friend
 Click F for fullscreen.
 
 ## What It Is:
